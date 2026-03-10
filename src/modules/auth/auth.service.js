@@ -34,7 +34,8 @@ export const loginUser = async( email, password ) => {
     }
 
     // Compare the provided password with the stored hashed password
-    const passwordMatch = await bcrypt.compare(password, user.password);
+    const passwordMatch = await user.comparePassword(password);
+    
     if (!passwordMatch) {
         throw new ApiError(StatusCodes.UNAUTHORIZED, 'Invalid email or password');
     }
