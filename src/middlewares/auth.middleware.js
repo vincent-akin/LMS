@@ -1,6 +1,6 @@
 import jwt from 'jsonwebtoken';
 import { StatusCodes } from 'http-status-codes';
-import { ApiError } from '../utils/apiError.js';
+import { ApiError } from '../utils/ApiError.js';
 
 export const authenticate = ( req, res, next ) => {
     const authHeader = req.headers.authorization;

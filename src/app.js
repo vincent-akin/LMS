@@ -1,6 +1,6 @@
 import express from "express";
-//import { logger } from "./middleware/logger.js";
-//import { errorHandler } from "./middleware/error.middleware-.js";
+import { logger } from "./middlewares/logger.middleware.js";
+import { errorHandler } from "./middlewares/error.middleware.js";
 
 import authRoutes from "./modules/auth/auth.routes.js";
 import courseRoutes from "./modules/course/course.routes.js";
