@@ -6,6 +6,7 @@ import authRoutes from "./modules/auth/auth.routes.js";
 import courseRoutes from "./modules/course/course.routes.js";
 import lessonRoutes from "./modules/lesson/lesson.routes.js";
 import enrollmentRoutes from "./modules/enrollment/enrollment.routes.js";
+import progressRoutes from "./modules/progress/progress.routes.js";
 
 
 const app = express();
@@ -18,6 +19,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/courses", courseRoutes);
 app.use("/api/lessons", lessonRoutes);
 app.use("/api/enrollments", enrollmentRoutes);
+app.use("/api/progress", progressRoutes);
 
 app.use(errorHandler);
 
