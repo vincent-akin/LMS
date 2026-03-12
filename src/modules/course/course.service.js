@@ -1,6 +1,6 @@
 import { StatusCodes } from "http-status-codes";
 import * as courseRepo from "./course.repository.js";
-import { ApiError } from "../../utils/apiError.js";
+import { ApiError } from "../../utils/ApiError.js";
 import { User } from "../auth/auth.schema.js";
 
 export const createCourse = async(data, instructorId) => {
@@ -10,8 +10,17 @@ export const createCourse = async(data, instructorId) => {
     })
 };
 
-export const getCourses = async() => {
-    return courseRepo.findAllCourses();
+export const getCourses = async (query) => {
+
+    const page = Number(query.page) || 1;
+    const limit = Number(query.limit) || 10;
+    const search = query.search || "";
+
+    return courseRepo.findAllCourses({
+        page,
+        limit,
+        search
+    });
 };
 
 export const updateCourse = async(courseId, data, instructorId) => {

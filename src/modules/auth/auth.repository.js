@@ -6,4 +6,4 @@ export const createUser = (data) => {
 
 export const findUserByEmail = (email) => {
     return User.findOne({ email }).select('+password'); // Include password in the result
-};
+}; 

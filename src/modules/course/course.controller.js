@@ -16,12 +16,21 @@ export const createCourse = async (req, res, next) => {
 };
 
 export const getCourses = async (req, res, next) => {
-    try{
-        const courses = await courseService.getCourses();
+    try {
 
-        res.status(StatusCodes.OK).json(new ApiResponse(StatusCodes.OK, courses, "Courses retrieved successfully"));
+        const courses = await courseService.getCourses(req.query);
 
-    }catch(error){
+        res
+        .status(StatusCodes.OK)
+        .json(
+            new ApiResponse(
+                StatusCodes.OK,
+                "Courses fetched",
+                courses
+            )
+        );
+
+    } catch (error) {
         next(error);
     }
 };
