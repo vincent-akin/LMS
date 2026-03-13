@@ -1,7 +1,7 @@
 import { StatusCodes } from "http-status-codes";
 import * as courseRepo from "./course.repository.js";
 import { ApiError } from "../../utils/ApiError.js";
-import { User } from "../auth/auth.schema.js";
+import { User } from "../user/user.schema.js";
 
 export const createCourse = async(data, instructorId) => {
     return courseRepo.createCourse({

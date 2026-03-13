@@ -1,5 +1,5 @@
 import { StatusCodes } from "http-status-codes";
-import { ApiError } from "../utils/apiError.js";
+import { ApiError } from "../utils/ApiError.js";
 
 export const authorize = (...roles) => {
     return ( req, res, next ) => {

@@ -1,4 +1,4 @@
-import { User } from './auth.schema.js';
+import { User } from '../user/user.schema.js';
 
 export const createUser = (data) => {
     return User.create(data);
